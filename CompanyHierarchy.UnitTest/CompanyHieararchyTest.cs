@@ -7,8 +7,7 @@ namespace CompanyHierarchy.UnitTest
     [TestClass]
     public class CompanyHieararchyTest
     {
-        readonly TreeNode<Employee> tree = CompanyData.BuildCompany();
-        
+        readonly TreeNode<Employee> tree = CompanyData.BuildCompany();        
 
 
         [TestMethod]
@@ -33,8 +32,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 2;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = new LinkedList<TreeNode<Employee>>();
-            list = Search.listSubLevelEmployees(tree, inputName);
+            LinkedList<TreeNode<Employee>> list = Search.listSubLevelEmployees(tree, inputName);
             
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -50,8 +48,7 @@ namespace CompanyHierarchy.UnitTest
 
             // Act
             LinkedList<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
-            System.Console.WriteLine("Test3: {0}", list.Count);
-
+            
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
         }
