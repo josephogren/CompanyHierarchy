@@ -18,7 +18,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 2;
 
             // Act                      
-            LinkedList<TreeNode<Employee>> list = Search.listSubLevelEmployees(tree, inputName);
+            List<TreeNode<Employee>> list = Search.listSubLevelEmployees(tree, inputName);
             
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -32,7 +32,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 2;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = Search.listSubLevelEmployees(tree, inputName);
+            List<TreeNode<Employee>> list = Search.listSubLevelEmployees(tree, inputName);
             
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -47,7 +47,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 2;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
+            List<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
             
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -61,7 +61,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 0;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
+            List<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
             
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -75,7 +75,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 1;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
+            List<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);
            
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
@@ -89,7 +89,7 @@ namespace CompanyHierarchy.UnitTest
             var expectedNumberOfElements = 3;
 
             // Act
-            LinkedList<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);           
+            List<TreeNode<Employee>> list = Search.listSameLevelEmployees(tree, inputName);           
 
             // Assert
             Assert.IsTrue(list.Count == expectedNumberOfElements);
