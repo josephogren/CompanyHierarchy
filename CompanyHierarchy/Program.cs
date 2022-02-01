@@ -21,8 +21,8 @@ namespace CompanyHierarchy
             Console.WriteLine("");
 
             // Method 1 - Returns all Employees of a given Employee
-            Console.WriteLine("*** Method 1 (Input: Bob) ***");
-            Display.printSubLevelEmployees(Company, "Bob");
+            Console.WriteLine("*** Method 1 (Input: Charlie) ***");
+            Display.printSubLevelEmployees(Company, "Charlie");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");

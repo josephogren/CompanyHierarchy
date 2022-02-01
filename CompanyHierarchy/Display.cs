@@ -23,7 +23,7 @@ namespace CompanyHierarchy
 
         public static void printSubLevelEmployees(TreeNode<Employee> searchTree, string name)
         {
-            List<TreeNode<Employee>> list = Search.listSubLevelEmployees(searchTree, name);
+            List<TreeNode<Employee>> list = Search.ListSubLevelEmployees(searchTree, name);
             foreach (TreeNode<Employee> element in list)
             {
                 Console.Write("{0}, ", element.Data);
@@ -32,7 +32,7 @@ namespace CompanyHierarchy
 
         public static void printSameLevelEmployees(TreeNode<Employee> searchTree, string name)
         {
-            List<TreeNode<Employee>> list = Search.listSameLevelEmployees(searchTree, name);
+            List<TreeNode<Employee>> list = Search.ListSameLevelEmployees(searchTree, name);
             foreach (TreeNode<Employee> element in list)
             {
                 Console.Write("{0}, ", element.Data);

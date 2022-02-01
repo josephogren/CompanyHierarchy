@@ -14,16 +14,16 @@ namespace CompanyHierarchy
         // private static LinkedList<TreeNode<Employee>> listOfSameLevelEmployees = new LinkedList<TreeNode<Employee>>();
 
         // Helper function to listSublevelEmployees()
-        private static List<TreeNode<Employee>> getChildrenOfNode(TreeNode<Employee> treeNode)
+        private static List<TreeNode<Employee>> GetChildrenOfNode(TreeNode<Employee> treeNode)
         {
-            List<TreeNode<Employee>> listOfChildren = new List<TreeNode<Employee>>();
-            // listOfChildren.AddLast(treeNode);
+            List<TreeNode<Employee>> listOfChildren = new List<TreeNode<Employee>>();            
+             //listOfChildren.AddLast(treeNode);
 
             foreach (TreeNode<Employee> child in treeNode.Children)
             {
-                // getChildrenOfNode(child);
+                //getChildrenOfNode(child);
                 listOfChildren.Add(child);
-                listOfChildren.Concat(getChildrenOfNode(child));
+                listOfChildren.Concat(GetChildrenOfNode(child));               
                 
             }
 
@@ -31,7 +31,7 @@ namespace CompanyHierarchy
         }
 
         // General helper function that returns the Node matching the search criteria of input Value
-        private static TreeNode<Employee> findNodeByValue(TreeNode<Employee> treeNode, string value)
+        private static TreeNode<Employee> FindNodeByValue(TreeNode<Employee> treeNode, string value)
         {
             if (treeNode.Data.Name == value)
             {
@@ -44,7 +44,7 @@ namespace CompanyHierarchy
                 foreach (TreeNode<Employee> child in treeNode.Children)
                 {
                     if (result == null)
-                        result = findNodeByValue(child, value);
+                        result = FindNodeByValue(child, value);
                 }
                 return result;
             }
@@ -52,14 +52,14 @@ namespace CompanyHierarchy
         }
 
 
-        public static List<TreeNode<Employee>> listSubLevelEmployees(TreeNode<Employee> searchTree, string name)
+        public static List<TreeNode<Employee>> ListSubLevelEmployees(TreeNode<Employee> searchTree, string name)
         {
-            TreeNode<Employee> inputNode = findNodeByValue(searchTree, name);
+            TreeNode<Employee> inputNode = FindNodeByValue(searchTree, name);
             List<TreeNode<Employee>> listOfSubLevelEmployees = new List<TreeNode<Employee>>();
 
-            // listOfSubLevelEmployees.Clear();
-            // listOfChildren.Clear();
-            foreach (TreeNode<Employee> element in getChildrenOfNode(inputNode))
+            //listOfSubLevelEmployees.Clear();
+            //listOfChildren.Clear();
+            foreach (TreeNode<Employee> element in GetChildrenOfNode(inputNode))
             {
                 if (element.Data.Name != name)
                     listOfSubLevelEmployees.Add(element);
@@ -67,12 +67,12 @@ namespace CompanyHierarchy
             return listOfSubLevelEmployees;
         }
 
-        public static List<TreeNode<Employee>> listSameLevelEmployees(TreeNode<Employee> searchTree, string name)
+        public static List<TreeNode<Employee>> ListSameLevelEmployees(TreeNode<Employee> searchTree, string name)
         {
-            TreeNode<Employee> inputNode = findNodeByValue(searchTree, name);
+            TreeNode<Employee> inputNode = FindNodeByValue(searchTree, name);
             List<TreeNode<Employee>> listOfSameLevelEmployees = new List<TreeNode<Employee>>();
 
-        listOfSameLevelEmployees.Clear();
+        //listOfSameLevelEmployees.Clear();
             foreach (TreeNode<Employee> element in TreeNode<Employee>.Index)
             {
                 if (element.Level == inputNode.Level && element != inputNode) // Make sure we don't add the input employee to the result list                                  
