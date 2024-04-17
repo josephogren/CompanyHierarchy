@@ -16,7 +16,7 @@ namespace CompanyHierarchy
 
             foreach (TreeNode<Employee> child in treeNode.Children)
             {
-                printTree(child);
+                printTree(child); // !!-Recursion-!!
             }
                   
         }
